@@ -1,33 +1,19 @@
 #include <iostream>
-#include <cstdlib>
-#include <ctime>
+#include <vector>
+#include <string>
+#include <fstream>
 
 using namespace std;
 
-int main() {
-    srand(time(0));
-    int x = rand() % 100;
-    double y = (double)rand() / RAND_MAX;
-    char z = 'a' + rand() % 26;
-    string s = "Hello, ";
-    s += "world!";
-    cout << "Random value: " << x << endl;
-    cout << "Random float: " << y << endl;
-    cout << "Random character: " << z << endl;
-    cout << s << endl;
+struct Student {
+    string firstname;
+    string surname;
+    char gender;
+    int age;
+    int bbitGroup;
+    vector<string> activities; // to store the activities chosen by the student
+};
 
-    int arr[5] = {1, 2, 3, 4, 5};
-    for (int i = 0; i < sizeof(arr) / sizeof(arr[0]); i++) {
-        cout << arr[i] << " ";
-    }
-    cout << endl;
-
-    bool b = true;
-    if (b) {
-        cout << "The answer is yes." << endl;
-    } else {
-        cout << "The answer is no." << endl;
-    }
-
-    return 0;
-}
+vector<Student> students; // to store all the students
+vector<string> clubs = {"Journalism Club", "Red Cross Society", "AISEC", "Business Club", "Computer Science Club"}; // list of club/societies
+vector<string> sports = {"Rugby", "Athletics", "Swimming", "Soccer"}; // list of sports
